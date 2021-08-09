@@ -14,3 +14,4 @@
 [WordFrequencyGame][Jan] refactor: change conditions of method 'getWordInfos'  
 [WordFrequencyGame][Jan] refactor: extract method 'getExpectedResult'  
 [WordFrequencyGame][Jan] refactor: change to stream for loop 'WordInfo wordInfo : wordInfos' in getExpectedResult method  
+[WordFrequencyGame][Jan] refactor: remove unsed code thru safe delete and check all lines unused code  
