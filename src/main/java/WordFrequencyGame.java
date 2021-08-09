@@ -13,11 +13,7 @@ public class WordFrequencyGame {
         } else {
 
             try {
-                List<WordInfo> wordInfos = getWordInfos(sentence);
-
-                wordInfos.sort((currentWord, wordTemp) -> wordTemp.getWordCount() - currentWord.getWordCount());
-
-                return getExpectedResult(wordInfos);
+                return getExpectedResult(getWordInfos(sentence));
             } catch (Exception e) {
 
 
@@ -28,6 +24,7 @@ public class WordFrequencyGame {
 
     private String getExpectedResult(List<WordInfo> wordInfos) {
         StringJoiner joiner = new StringJoiner("\n");
+        wordInfos.sort((currentWord, wordTemp) -> wordTemp.getWordCount() - currentWord.getWordCount());
         wordInfos
                 .stream()
                 .map(wordInfo -> wordInfo.getValue() + " " + wordInfo.getWordCount())
