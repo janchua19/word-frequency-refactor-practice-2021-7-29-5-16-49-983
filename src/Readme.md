@@ -15,3 +15,5 @@
 [WordFrequencyGame][Jan] refactor: extract method 'getExpectedResult'  
 [WordFrequencyGame][Jan] refactor: change to stream for loop 'WordInfo wordInfo : wordInfos' in getExpectedResult method  
 [WordFrequencyGame][Jan] refactor: remove unsed code thru safe delete and check all lines unused code  
+[WordFrequencyGame][Jan] refactor: change for loop 'String word : new HashSet<>(words)' to 'stream()'  
+[WordFrequencyGame][Jan] refactor: move code for sorting to getExoectedResult method and remove some excess code
