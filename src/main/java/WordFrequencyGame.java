@@ -11,19 +11,7 @@ public class WordFrequencyGame {
         } else {
 
             try {
-
-                //split the input string with 1 to n pieces of spaces
                 List<WordInfo> wordInfos = getWordInfos(sentence);
-
-                //get the map for the next step of sizing the same word
-                Map<String, List<WordInfo>> map =getListMap(wordInfos);
-
-                List<WordInfo> uniqueWordInfos = new ArrayList<>();
-                for (Map.Entry<String, List<WordInfo>> entry : map.entrySet()){
-                    WordInfo wordInfo = new WordInfo(entry.getKey(), entry.getValue().size());
-                    uniqueWordInfos.add(wordInfo);
-                }
-                wordInfos = uniqueWordInfos;
 
                 wordInfos.sort((currentWord, wordTemp) -> wordTemp.getWordCount() - currentWord.getWordCount());
 
@@ -42,12 +30,11 @@ public class WordFrequencyGame {
     }
 
     private List<WordInfo> getWordInfos(String sentence) {
-        String[] words = sentence.split(BLANK_SPACES);
-
+        List<String> words = Arrays.asList(sentence.split(BLANK_SPACES));
         List<WordInfo> wordInfos = new ArrayList<>();
-        for (String word : words) {
-            WordInfo input = new WordInfo(word, 1);
-            wordInfos.add(input);
+        for (String word : new HashSet<>(words)) {
+            int wordCount = Collections.frequency(words,word);
+            wordInfos.add(new WordInfo(word,wordCount));
         }
         return wordInfos;
     }
