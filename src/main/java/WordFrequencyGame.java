@@ -13,13 +13,7 @@ public class WordFrequencyGame {
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] words = sentence.split(BLANK_SPACES);
-
-                List<WordInfo> wordInfos = new ArrayList<>();
-                for (String word : words) {
-                    WordInfo input = new WordInfo(word, 1);
-                    wordInfos.add(input);
-                }
+                List<WordInfo> wordInfos = getWordInfos(sentence);
 
                 //get the map for the next step of sizing the same word
                 Map<String, List<WordInfo>> map =getListMap(wordInfos);
@@ -45,6 +39,17 @@ public class WordFrequencyGame {
                 return "Calculate Error";
             }
         }
+    }
+
+    private List<WordInfo> getWordInfos(String sentence) {
+        String[] words = sentence.split(BLANK_SPACES);
+
+        List<WordInfo> wordInfos = new ArrayList<>();
+        for (String word : words) {
+            WordInfo input = new WordInfo(word, 1);
+            wordInfos.add(input);
+        }
+        return wordInfos;
     }
 
     private boolean isSingleWord(String sentence) {
