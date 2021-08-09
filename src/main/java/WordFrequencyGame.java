@@ -6,7 +6,7 @@ public class WordFrequencyGame {
 
     public String getResult(String sentence){
 
-        if (sentence.split(BLANK_SPACES).length==1) {
+        if (isSingleWord(sentence)) {
             return sentence + " 1";
         } else {
 
@@ -45,6 +45,10 @@ public class WordFrequencyGame {
                 return "Calculate Error";
             }
         }
+    }
+
+    private boolean isSingleWord(String sentence) {
+        return sentence.split(BLANK_SPACES).length==1;
     }
 
 
