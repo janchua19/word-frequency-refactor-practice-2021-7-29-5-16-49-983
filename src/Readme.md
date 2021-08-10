@@ -18,3 +18,4 @@
 [WordFrequencyGame][Jan] refactor: change for loop 'String word : new HashSet<>(words)' to 'stream()'  
 [WordFrequencyGame][Jan] refactor: move code for sorting to getExoectedResult method and remove some excess code
 [WordFrequencyGame][Jan] refactor: create new method 'sortWordInfos
+[WordFrequencyGame][Jan] refactor: rename WordInfo parameters 's' to 'word' and 'i' to 'wordCount'

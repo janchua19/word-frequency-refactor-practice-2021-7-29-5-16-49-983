@@ -7,15 +7,10 @@ public class WordFrequencyGame {
     public static final String BLANK_SPACES = "\\s+";
 
     public String getResult(String sentence){
-
-        if (isSingleWord(sentence)) {
-            return sentence + " 1";
-        } else {
-            try {
-                return getExpectedResult(getWordInfos(sentence));
-            } catch (Exception e) {
-                return "Calculate Error";
-            }
+        try {
+            return getExpectedResult(getWordInfos(sentence));
+        } catch (Exception e) {
+            return "Calculate Error";
         }
     }
 
