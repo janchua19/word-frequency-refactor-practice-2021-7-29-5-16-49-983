@@ -11,12 +11,9 @@ public class WordFrequencyGame {
         if (isSingleWord(sentence)) {
             return sentence + " 1";
         } else {
-
             try {
                 return getExpectedResult(getWordInfos(sentence));
             } catch (Exception e) {
-
-
                 return "Calculate Error";
             }
         }
